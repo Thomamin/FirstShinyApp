@@ -1,1 +1,0 @@
-This shiny app is a homework project of Johns Hopkins Univ. Coursera Data Product course. This app takes a country and age as input and shows the country's Happiness rank among 150 nations, life expectancy, and user's remaining life period. Data is from HPI (http://www.happyplanetindex.org)

@@ -1,0 +1,67 @@
+---
+title       : How happy is your country?
+subtitle    : Assess your country's happiness using Happy Planet Index 
+author      : Thomas Min
+job         : Artist
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets    : [bootstrap, quiz, shiny, interactive]
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Slide 1
+
+
+
+
+
+**Is GDP still a proper index to evaluate a country?**
+
+---
+
+## Slide 2
+
+
+
+
+**Have your ever heard about Happy Planet Index?**
+***(http://www.happyplanetindex.org)***
+
+**Check how good your country is for happiness**
+** and how long can you enjoy it.**
+
+---  
+
+## Slide 3
+
+
+```{r opts.label='shiny'}
+hpiData <- read.csv("./apps/HPI.csv")
+slidifyUI(
+  pageWithSidebar(
+    headerPanel("2013 Happyness Index rank of a country, and your remaining years in the country"), 
+    sidebarPanel(
+      #Use Country column of the data for a selective input
+      selectInput('userCountry', 'Your Country:',
+        as.vector(hpiData$Country)
+      ),
+      #A numeric input, default value is 30
+      numericInput('userAge', 'Your Age', 30)
+    ),
+    #main panel shows outputs retrieved and calculated by server based on sidebarPanel input
+    mainPanel( 
+      textOutput('happinessRank'),
+      textOutput('lifeExpectancy'),
+      textOutput('remainingYears')
+    ) 
+  )
+)
+```
+
+---  
+
+## Slide 4
+
+**Don't waist your day! Make it happy for ya!**

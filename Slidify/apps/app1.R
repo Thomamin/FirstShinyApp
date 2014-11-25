@@ -1,7 +1,7 @@
 hpiData <- read.csv("./HPI.csv")
 
-shinyServer(
-  function(input, output) {
+#shinyServer(
+#  function(input, output) {
     
     output$happinessRank <- renderText({
         paste("Happiness rank of your country is", 
@@ -15,5 +15,5 @@ shinyServer(
         paste("Remaining years for you: ", 
               hpiData[hpiData$Country == input$userCountry, 'LifeExpectancy'] - input$userAge)
     })
-  } 
-)
+#  } 
+#)
